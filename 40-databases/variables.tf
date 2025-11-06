@@ -21,4 +21,4 @@ variable "sg_names" {
         # Backend ALB
         "backend_alb"
     ]
-}
+} 
