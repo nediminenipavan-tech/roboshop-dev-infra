@@ -6,7 +6,3 @@ ansible-pull -U https://github.com/nediminenipavan-tech/ansible-roboshop-roles-t
 # git clone ansible-playbook
 # cd ansible-playbook
 # ansible-playbook -i inventory main.yaml
-
-
-
-
