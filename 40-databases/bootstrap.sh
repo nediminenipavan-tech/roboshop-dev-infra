@@ -15,19 +15,19 @@ component=$1
 
 mkdir -p $REPO_DIR
 mkdir -p /var/log/roboshop/
-touch ansible.log 
+touch ansible.log
 
 cd $REPO_DIR
 
-# check if ansible repo is already cloned or not 
+# check if ansible repo is already cloned or not
 
-if [-d $ANSIBLE_DIR ]; then 
+if [ -d $ANSIBLE_DIR ]; then
 
     cd $ANSIBLE_DIR
-    git pull 
-else 
+    git pull
+else
     git clone $REPO_URL
-    CD $ANSIBLE_DIR
-fi 
+    cd $ANSIBLE_DIR
+fi
 
-ansible-playbook -e  component=$component main.yaml
+ansible-playbook -e component=$component -e env=$environment main.yaml
