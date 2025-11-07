@@ -3,7 +3,7 @@ variable "project_name" {
 }
 
 variable "environment" {
-    default = "deve"
+    default = "dev"
   
 }
 variable "sg_names" {
@@ -17,6 +17,8 @@ variable "sg_names" {
     # bastion
     "bastion",
     # frontend load balancer
-     "frontend-lb"
+     "frontend-lb",
+    # frontend load balancer
+     "backend_alb"
  ]
 }
