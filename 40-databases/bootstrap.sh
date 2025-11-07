@@ -10,7 +10,7 @@ dnf install ansible -y
   
 REPO_URL=https://github.com/nediminenipavan-tech/ansible-roboshop-roles-tf.git
 REPO_DIR=/opt/roboshop/ansible
-ANSIBLE_DIR=ansible-roboshop-roles.tf 
+ANSIBLE_DIR=ansible-roboshop-roles-tf 
 component=$1
  
 
@@ -22,12 +22,12 @@ cd $REPO_DIR
 
 # check if ansible repo is already cloned or not
 
-if [ -d $ANSIBLE_DIR ]; then 
+if [ -d $ANSIBLE_DIR ]; then     
 
     cd $ANSIBLE_DIR
     git pull 
 else
-    git clone $REPO_URL
+    git clone $REPO_URL 
     cd $ANSIBLE_DIR
 fi
 
