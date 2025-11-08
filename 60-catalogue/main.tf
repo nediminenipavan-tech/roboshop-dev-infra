@@ -40,9 +40,8 @@ resource "terraform_data" "catalogue" {
     ]
   }
 }
-  
 
-  # stop the instance to take image
+# stop the instance to take image
 resource "aws_ec2_instance_state" "catalogue" {
   instance_id = aws_instance.catalogue.id
   state       = "stopped"
@@ -59,4 +58,4 @@ resource "aws_ami_from_instance" "catalogue" {
             Name = "${local.common_name_suffix}-catalogue-ami" # roboshop-dev-mongodb
         }
   )
-} 
+}
