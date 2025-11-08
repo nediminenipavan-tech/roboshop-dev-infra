@@ -15,12 +15,12 @@ component=$1
  
 
 mkdir -p $REPO_DIR   
-mkdir -p /var/log/roboshop/
+mkdir -p /var/log/roboshop/    
 touch ansible.log
 
 cd $REPO_DIR 
 
-# check if ansible repo is already cloned or not
+# check if ansible repo is already cloned or not       
 
 if [ -d $ANSIBLE_DIR ]; then     
 
