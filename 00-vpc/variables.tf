@@ -7,7 +7,7 @@ variable "project_name" {
 }
 
 variable "environment"{
-    default = "deve" # change 
+    default = "dev" # change  
 }
 
 variable "vpc_tags" {
