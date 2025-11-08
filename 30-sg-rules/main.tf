@@ -79,5 +79,5 @@ resource "aws_security_group_rule" "catalogue_backend_alb" {
   source_security_group_id = local.backend_alb_sg_id
   from_port         = 8080
   protocol          = "tcp"
-  to_port           = 8080
+  to_port           = 8080  
 }
