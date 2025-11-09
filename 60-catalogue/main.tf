@@ -30,7 +30,7 @@ resource "terraform_data" "catalogue" {
   provisioner "file" {
     source = "catalogue.sh"
     destination = "/tmp/catalogue.sh"
-  }
+  } 
 
   provisioner "remote-exec" {
     inline = [

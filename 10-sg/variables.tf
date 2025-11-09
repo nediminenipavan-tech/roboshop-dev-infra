@@ -11,7 +11,7 @@ variable "sg_names" {
     default = [
     "mongodb", "redis", "mysql", "rabbitmq",
     # backend 
-    "catalouge", "user", "cart", "shipping", "payment",
+    "catalogue", "user", "cart", "shipping", "payment",
     # frontend 
     "frontend",
     # bastion
