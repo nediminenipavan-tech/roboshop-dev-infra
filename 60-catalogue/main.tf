@@ -59,3 +59,6 @@ resource "aws_ami_from_instance" "catalogue" {
         }
   )
 }
+   
+
+
