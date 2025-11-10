@@ -123,7 +123,7 @@ resource "aws_launch_template" "catalogue" {
       }
   )
 
-}
+} 
 
 resource "aws_autoscaling_group" "catalogue" {
   name                      = "${local.common_name_suffix}-catalogue"
@@ -139,7 +139,15 @@ resource "aws_autoscaling_group" "catalogue" {
   }
   vpc_zone_identifier       = local.private_subnet_ids
   target_group_arns = [aws_lb_target_group.catalogue.arn]
-  
+
+  instance_refresh {
+    strategy = "Rolling"
+    preferences {
+      min_healthy_percentage = 50 # atleast 50% of the instances should be up and running 
+    }
+    triggers = ["launch_template"]
+  }
+
   dynamic "tag" {  # we will get the iterator with name as tag
     for_each = merge(
       local.common_tags,
