@@ -4,3 +4,9 @@
     rule_priority = var.rule_priority
 }
  
+module "components" {
+    for_each = var.components
+    source = "https://github.com/nediminenipavan-tech/terraform-roboshop-component.git"
+    component = each.key
+    rule_priority = each.value.rule_priority
+}
