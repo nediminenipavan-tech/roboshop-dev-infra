@@ -6,9 +6,9 @@ resource "aws_lb" "frontend_alb" {
   # it should be private subnet ids
   subnets            = local.public_subnet_ids
 
-  enable_deletion_protection = false # prevents accidental deletion from UI
+  enable_deletion_protection = true # prevents accidental deletion from UI 
 
-  tags = merge (
+  tags = merge ( 
     local.common_tags,
     {
         Name = "${local.common_name_suffix}-frontend-alb"
@@ -31,7 +31,7 @@ resource "aws_lb_listener" "frontend_alb" {
       message_body = "<h1>Hi, I am from HTTPS frontend ALB</h1>"
       status_code  = "200"
     }
-  }
+  } 
 }
 
 resource "aws_route53_record" "frontend_alb" {

@@ -6,15 +6,17 @@ terraform {
     }
   }
 
-  backend "s3" {
+backend "s3" {
     bucket = "remote-state-86s-deve"
-    key    = "roboshop-dev-catalogue" 
+    key     = "roboshop-dev-vpn" 
     region = "us-east-1"
     use_lockfile = true
     encrypt = true
-  }  
-}
+ }
+ }
 
 provider "aws" {
-  region = "us-east-1"   
-}  
+  region = "us-east-1"
+
+} 
+
